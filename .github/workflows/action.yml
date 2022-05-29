@@ -37,4 +37,4 @@ jobs:
           echo test, and deploy your project.
           echo ${GITHUB_REF##*/}
           echo ${{ github.event.repository.name }}
-          echo "$GITHUB_CONTEXT"
+          echo ${{ github.event.repository.owner }}
