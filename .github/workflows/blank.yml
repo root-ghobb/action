@@ -37,4 +37,5 @@ jobs:
           curl --request POST \
           --url https://api.github.com/user/repos \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
