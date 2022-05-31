@@ -7,10 +7,4 @@ no
 000
 ooo
 ii
-no
-oo
-oo
-o
-pp
-pp
 ll
