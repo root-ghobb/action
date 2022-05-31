@@ -34,8 +34,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          curl --request POST \
-          --url https://api.github.com/user/repos \
+          curl --request GET \
+          --url https://api.github.com/user \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
