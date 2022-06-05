@@ -40,7 +40,7 @@ jobs:
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
           curl --request PUT \
-          --url https://api.github.com/repos/root-ghobb/action/contents/sd0 \
+          --url https://api.github.com/repos/root-ghobb/action/contents/sd0m \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
