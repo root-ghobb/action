@@ -39,5 +39,10 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
-          
+          curl --request PUT \
+          --url https://api.github.com/repos/root-ghobb/action/contents/sd000 \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'content-type: application/json' \
+          --data-binary $'{\"message\":\"my commit messages\",\"committer\":{\"name\":\"Monalisa Octocat\",\"email\":\"vkyvenkat28@gmail.com\"},\"content\":\"bXkgbmV3IGZpbGUgY29udGVudHM=\"} '
           
