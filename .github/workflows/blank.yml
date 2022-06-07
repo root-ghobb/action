@@ -37,17 +37,24 @@ jobs:
           echo test, and deploy your project.
           sleep 5s
           curl --request GET \
-          --url https://api.github.com/repos/va0005/yoo/contents \
+          --url https://api.github.com/repos/root-ghobb/action/contents \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
           sleep 15s
           curl --request POST \
-          --url https://api.github.com/repos/va0005/yoo/issues \
+          --url https://api.github.com/repos/root-ghobb/action/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
-          --data-binary $'{\"title\":\"cross a bug\",\"body\":\"I\'m having a Dproblem with this.\"}'
+          --data-binary $'{\"title\":\"da bug 1\",\"body\":\"I\'m having a problem with this.\"}'
+          sleep 15s
+          curl --request POST \
+          --url https://api.github.com/repos/root-ghobb/action/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'content-type: application/json' \
+          --data-binary $'{\"title\":\"da bug 2\",\"body\":\"I\'m having a Dproblem with thisy.\"}'
           sleep 5s
           
           
