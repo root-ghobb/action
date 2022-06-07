@@ -40,10 +40,10 @@ jobs:
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
           curl --request POST \
-          --url https://api.github.com/repos/root-ghobb/action/issues \
+          --url https://api.github.com/repos/va0005/yoo/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
-          --data-binary $'{\"title\":\"Found a bug\",\"body\":\"I\'m having a problem with this.\"}'
+          --data-binary $'{\"title\":\"FoFDund a bug\",\"body\":\"I\'m having a Dproblem with this.\"}'
           
           
