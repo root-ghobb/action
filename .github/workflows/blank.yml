@@ -39,6 +39,7 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
+          sleep 15s
           curl --request POST \
           --url https://api.github.com/repos/va0005/yoo/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
