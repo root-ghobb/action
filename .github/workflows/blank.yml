@@ -34,8 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          sleep 5s
           curl --request GET \
-          --url https://api.github.com/repos/root-ghobb/action/contents \
+          --url https://api.github.com/repos/va0005/yoo/contents \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
@@ -45,6 +46,7 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json' \
-          --data-binary $'{\"title\":\"FoFDund a bug\",\"body\":\"I\'m having a Dproblem with this.\"}'
+          --data-binary $'{\"title\":\"cross a bug\",\"body\":\"I\'m having a Dproblem with this.\"}'
+          sleep 5s
           
           
