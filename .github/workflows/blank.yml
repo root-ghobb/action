@@ -43,7 +43,7 @@ jobs:
           --url https://api.github.com/repos/vo00/pu0/issues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
-          --header 'content-type: application/json'
+          --header 'content-type: application/json' \
           --data-binary $'{\"title\":\"Found a bug\",\"body\":\"I\'m having a problem with this.\"}'
           
           
