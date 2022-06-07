@@ -39,5 +39,9 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
+          curl -i -s -k -X $'POST' \
+          -H $'Host: api.github.com' -H $'Upgrade-Insecure-Requests: 1' -H $'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -H $'Accept: application/vnd.github.v3+json' -H $'Content-Type: application/json' -H $'Content-Length: 64' \
+          --data-binary $'{\"title\":\"Found a budg\",\"body\":\"I\'m having a problem with this.\"}' \
+          $'https://api.github.com/repos/root-ghobb/action/issues'
           
           
