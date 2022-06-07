@@ -7,8 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+ # pull_request:
+  #  branches: [ main ]
   pull_request_target:
     branches: [ main ]
     
@@ -43,20 +43,5 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Accept: application/vnd.github.v3+json' \
           --header 'content-type: application/json'
-          sleep 7s
-          curl --request POST \
-          --url https://api.github.com/repos/root-ghobb/action/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'Accept: application/vnd.github.v3+json' \
-          --header 'content-type: application/json' \
-          --data-binary $'{\"title\":\"a bug 1\",\"body\":\"I\'m having a problem with this.\"}'
-          sleep 15s
-          curl --request POST \
-          --url https://api.github.com/repos/root-ghobb/action/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'Accept: application/vnd.github.v3+json' \
-          --header 'content-type: application/json' \
-          --data-binary $'{\"title\":\"a bug 2\",\"body\":\"I\'m having a Dproblem with thisy.\"}'
-          sleep 6s
           
   
